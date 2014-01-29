@@ -110,15 +110,10 @@ layout: post
 
 "
 
-write () {
-  path="$1"
-  file=`postname $path"$@"`
-  vim + +start $post
-}
-
 writepost () {
-  site="$1"
-  post=`postname $site/"$@"`
+  local dir="$1"
+  shift 1;
+  post=$dir/`postname "$@"`
   [ ! -e "$post" ] && echo "$blog_header" > $post
   vim + +start $post
 }
