@@ -118,6 +118,15 @@ writepost () {
   vim + +start $post
 }
 
+vie () {
+  local file=`find . -name "*$**" | head -1`
+  if [ -e "$file" ]; then
+    vi $file
+  else
+    vi $key # when actually want 'vi' but fat-fingered
+  fi
+}
+
 export SITE="$HOME/com"
 export SITEME="$HOME/me"
 
@@ -131,7 +140,7 @@ alias draftme='writepost $SITEME/_drafts'
 alias draftsme='vi $SITEME/_drafts'
 alias com='cd ~/com'
 alias me='cd ~/me'
-alias show='jekyl serve'
+alias show='jekyll serve'
 
 alias notes='note'
 alias todos='todo'
@@ -139,4 +148,5 @@ alias todos='todo'
 alias bin='cd ~/bin'
 alias private='cd ~/private'
 alias trainemon='cd ~/trainemon'
+alias bashrc='vi $HOME/config/bashrc; . $HOME/config/bashrc'
 
