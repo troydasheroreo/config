@@ -151,7 +151,8 @@ alias todo='note todo'
 alias todos='todo'
 
 alias bin='cd ~/bin'
+alias bashrc='vi $HOME/config/bashrc; . $HOME/config/bashrc'
+alias filters='cd ~/filters'
 alias private='cd ~/private'
 alias trainemon='cd ~/trainemon'
-alias bashrc='vi $HOME/config/bashrc; . $HOME/config/bashrc'
 
