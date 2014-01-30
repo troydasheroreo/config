@@ -39,7 +39,7 @@ set -o noclobber
 set -o ignoreeof
 
 alias more=less
-alias which='type -a'
+alias whichl='type -a'
 alias path='echo -e ${PATH//:/\\n}'
 alias tstamp='date +%Y%m%d%H%M%S'
 
@@ -127,6 +127,10 @@ vie () {
   fi
 }
 
+vic () {
+  vi `which $1` 
+}
+
 export SITE="$HOME/com"
 export SITEME="$HOME/me"
 
@@ -143,6 +147,7 @@ alias me='cd ~/me'
 alias show='jekyll serve'
 
 alias notes='note'
+alias todo='note todo'
 alias todos='todo'
 
 alias bin='cd ~/bin'
